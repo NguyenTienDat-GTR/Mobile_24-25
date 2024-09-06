@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Pressable } from 'react-native';
 
 const YourApp = () => {
   return (
@@ -38,12 +38,24 @@ const YourApp = () => {
           alignItems: 'center',
           flexDirection: 'row',
         }}>
-        <button style={{ backgroundColor: 'yellow', border: 'none' }}>
+        <Pressable
+          style={{
+            backgroundColor: 'yellow',
+            border: 'none',
+            width: '4rem',
+            textAlign: 'center',
+          }}>
           LOGIN
-        </button>
-        <button style={{ backgroundColor: 'yellow', border: 'none' }}>
+        </Pressable>
+        <Pressable
+          style={{
+            backgroundColor: 'yellow',
+            border: 'none',
+            width: '4rem',
+            textAlign: 'center',
+          }}>
           SIGN UP
-        </button>
+        </Pressable>
       </View>
       <View
         style={{
