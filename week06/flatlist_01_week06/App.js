@@ -26,7 +26,7 @@ export default function App() {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [product]);
 
   return (
     <View style={styles.container}>
@@ -50,7 +50,7 @@ export default function App() {
         data={product}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.item}>
+          <View style={styles.item} >
             <Image style={styles.img} source={{ uri: item.image }} />
             <View style={styles.infoSp}>
               <Text
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     height: '3.1rem',
     justifyContent: 'space-between',
     alignItems: 'center',
+    height:"auto"
   },
   txtChat: {
     fontFamily: 'Roboto',
@@ -110,40 +111,39 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imgCart: {
-    width: '2rem',
-    height: '2rem',
-    margin: '0.7rem',
-    marginRight: '1.1rem',
+     width: '1rem',
+    height: '1rem',
+    margin: '0.6rem',
+    marginRight: '1.4rem',
   },
   bottom: {
     position: 'fixed',
     flexDirection: 'row',
     backgroundColor: '#1BA9FF',
-    height: '3.1rem',
+    height: 'auto',
     justifyContent: 'space-between',
     alignItems: 'center',
-    top: '93%',
+    bottom: '0',
     width: '100%',
-    zIndex: 1,
   },
   imgReturn_header: {
-    width: '2rem',
-    height: '2rem',
+    width: '1rem',
+    height: '1rem',
     margin: '0.6rem',
   },
   imgReturn_bottom: {
-    width: '2rem',
-    height: '2rem',
+    width: '1rem',
+    height: '1rem',
     margin: '0.6rem',
   },
   imgHome: {
-    width: '2rem',
-    height: '2rem',
+    width: '1rem',
+    height: '1rem',
     margin: '0.6rem',
   },
   imgMenu: {
-    width: '2rem',
-    height: '2rem',
+     width: '1rem',
+    height: '1rem',
     margin: '0.6rem',
   },
   item: {
@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
     height: '2.5rem',
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius:"15%"
   },
   buttonChatText: {
     color: 'white',
