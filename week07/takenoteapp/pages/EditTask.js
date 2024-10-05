@@ -26,11 +26,16 @@ export default function EditTask() {
   }, [task]);
 
   const handleBack = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Home',{email});
   };
 
   const handleFinish = async () => {
     try {
+
+       if (taskContent === '') {
+        alert('Content is require!');
+        return;
+      }
       // Gửi yêu cầu PUT tới API để cập nhật task
       await axios.put(
         `https://6544382b5a0b4b04436c2915.mockapi.io/TakeNoteApp/${task.taskID}`,

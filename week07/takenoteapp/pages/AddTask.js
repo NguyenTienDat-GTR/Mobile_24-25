@@ -16,19 +16,22 @@ export default function AddTask() {
   const [taskContent, setTaskContent] = useState('');
   const [tasks, setTasks] = useState([]); // State để lưu trữ danh sách task hiện tại
 
-  const {data, email} = route.params
+  const { data, email } = route.params;
 
   const handleBack = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Home', { email });
   };
 
   const handleFinish = async () => {
     try {
       // Tìm ID lớn nhất trong danh sách hiện có
-      const maxId = Math.max(
-        ...tasks.map((task) => task.taskID)
-      );
+      const maxId = Math.max(...tasks.map((task) => task.taskID));
       const newTaskID = maxId + 1;
+
+      if (taskContent === '') {
+        alert('Content is require!');
+        return;
+      }
 
       // Tạo đối tượng task mới
       const newTask = {
